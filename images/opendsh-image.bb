@@ -1,6 +1,6 @@
 SUMMARY = "OpenDsh production image"
 
-include ivi-base-image.bb
+include recipes-sato/images/core-image-sato.bb
 
 IMAGE_FEATURES += "splash"
 
