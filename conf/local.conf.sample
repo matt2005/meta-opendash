@@ -5,7 +5,7 @@
 # mask wireguard from meta-openembedded/meta-networking
 # use version in meta-jumpnow to support kernels < 5.6
 # with wireguard-linux-compat
-BBMASK = "meta-networking/recipes-kernel/wireguard"
+#BBMASK = "meta-networking/recipes-kernel/wireguard"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
