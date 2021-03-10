@@ -8,4 +8,4 @@ LICENSE = "MIT"
 
 IMAGE_BASENAME = "${MACHINE}_OpenDsh-Image-Yocto"
 
-IMAGE_INSTALL_append = " aasdk-2.1.0 openauto opendsh"
+IMAGE_INSTALL_append = " aasdk openauto opendsh"
