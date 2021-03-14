@@ -6,9 +6,9 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop"
 SRCREV = "develop"
 DEPENDS += " aasdk openauto"
 inherit cmake
-EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DGST_BUILD=true ../git"
+EXTRA_OECMAKE += "-DCMAKE_INSTALL_INCLUDEDIR=include -DQT_VERSION=5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-std=c++11"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r1" 
+PR = "r2" 
 
 # this indicates the folder to run do_compile from.
-S="${WORKDIR}/dash"
+S="${WORKDIR}/git"
