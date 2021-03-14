@@ -6,7 +6,8 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop"
 SRCREV = "develop"
 DEPENDS += " aasdk openauto"
 inherit cmake
-EXTRA_OECMAKE += "-DCMAKE_INSTALL_INCLUDEDIR=include -DQT_VERSION=5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-std=c++11 -pthread"
+EXTRA_OECMAKE += "-DCMAKE_INSTALL_INCLUDEDIR=include -DQT_VERSION=5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-std=c++11"
+EXTRA_OECMAKE += "-DCMAKE_CXX_FLAGS=-pthread"
 # this is a revision number that should be updated every time you alter this recipe
 PR = "r2" 
 
