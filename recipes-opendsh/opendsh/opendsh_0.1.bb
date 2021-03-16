@@ -6,7 +6,7 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop"
 SRCREV = "develop"
 DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto bluez-qt"
 inherit cmake
-EXTRA_OECMAKE += "-DGST_BUILD=true -DCMAKE_BUILD_TYPE=Release"
+EXTRA_OECMAKE += " -DGST_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
 PR = "r3" 
 
