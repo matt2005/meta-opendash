@@ -7,7 +7,7 @@ SRCREV = "develop"
 DEPENDS += " cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto bluez-qt"
 inherit cmake
 EXTRA_OECMAKE += "-DGST_BUILD=true -DCMAKE_INSTALL_INCLUDEDIR=include -DQT_VERSION=5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-std=c++11"
-
+OECMAKE_C_FLAGS += "-pthread"
 # this is a revision number that should be updated every time you alter this recipe
 PR = "r2" 
 
