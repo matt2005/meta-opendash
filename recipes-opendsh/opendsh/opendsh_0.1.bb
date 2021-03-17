@@ -2,7 +2,8 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "OpenDsh" 
 LICENSE = "GPL-3.0"
 LIC_FILES_CHKSUM = "file://../git/README.md;md5=0090cf601ee0c561e539b55422b61b88 "
-SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop"
+SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
+           file://0001-yocto-fix.patch \"
 SRCREV = "develop"
 DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto bluez-qt"
 inherit cmake
