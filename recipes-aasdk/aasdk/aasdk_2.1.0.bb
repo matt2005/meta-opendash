@@ -12,3 +12,4 @@ PR = "r1"
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/aasdk"
+do_compile[progress] = "percent"
