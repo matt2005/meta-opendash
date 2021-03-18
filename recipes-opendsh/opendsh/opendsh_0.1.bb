@@ -19,3 +19,5 @@ PR = "r5"
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"
+
+do_compile[progress] = "percent"
