@@ -8,7 +8,7 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
 SRCREV = "develop"
 DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto bluez-qt"
 inherit cmake
-EXTRA_OECONF = " \
+EXTRA_OECONF += " \
     --enable-pthreads \
     --extra-cflags="${CFLAGS} ${HOST_CC_ARCH}${TOOLCHAIN_OPTIONS}" \
     --extra-ldflags="${LDFLAGS}" \
