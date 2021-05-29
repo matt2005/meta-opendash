@@ -24,7 +24,8 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "rpi-sdimg"
 
-MACHINE = "raspberrypi4-64"
+#Set as env variable
+#MACHINE = "raspberrypi4-64"
 
 KERNEL_IMAGETYPE = "Image"
 
