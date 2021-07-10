@@ -23,9 +23,6 @@ Dependencies
   URI:git://github.com/opencardev/meta-opencardev
   branch: hardknott
   
-  URI: git://github.com/KDE/meta-kf5
-  branch: hardknott
-  
   URI: git://github.com/meta-qt5
   branch: hardknott
 
