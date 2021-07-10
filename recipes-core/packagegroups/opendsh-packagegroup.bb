@@ -50,6 +50,12 @@ RDEPENDS_${PN} = " \
 	librtaudio \
 	openauto \
 	opendsh \
+	sudo \
+	hostapd \
+	dnsmasq \
+	dhcpcd \
+	zip \
+	crda \
 "
 
 INSANE_SKIP_${PN} = "dev-deps"

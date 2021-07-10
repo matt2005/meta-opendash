@@ -6,7 +6,7 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
            file://0001-yocto-fix.patch \
            "
 SRCREV = "develop"
-DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto bluez-qt"
+DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost aasdk openauto"
 inherit cmake
 EXTRA_OECONF += " \
     --enable-pthreads \
@@ -15,7 +15,7 @@ EXTRA_OECONF += " \
 "
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r5" 
+PR = "r6" 
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"
