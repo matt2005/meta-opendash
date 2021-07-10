@@ -16,7 +16,7 @@ BBLAYERS ?= " \
   ${HOME}/yocto/poky-hardknott/meta-qt5 \
   ${HOME}/yocto/poky-hardknott/meta-raspberrypi \
   ${HOME}/yocto/poky-hardknott/meta-security \
-  ${HOME}/yocto/poky-hardknott/meta-opencardev/openauto \
+  ${HOME}/yocto/poky-hardknott/meta-opencardev/meta-openauto \
   ${HOME}/yocto/poky-hardknott/meta-opendash \
   ${HOME}/yocto/poky-hardknott/meta-kf5 \
 "
