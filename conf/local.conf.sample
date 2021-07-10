@@ -107,7 +107,7 @@ IMAGE_INSTALL_append = " openssh-sftp-server rsync"
 MACHINE_FEATURES += " bluetooth"
 CORE_IMAGE_EXTRA_INSTALL = " rsync "
 DISTRO_FEATURES_append = " pi-bluetooth bluez5 bluetooth linux-firmware-bcm43430 linux-firmware-brcmfmac43430"
-IMAGE_INSTALL_append = " pi-bluetooth bluez5 bluez5-testtools linux-firmware-bcm43430 i2c-tools hostapd dhcp-server udev-rules-rpi bridge-utils iptables linux-firmware-ralink linux-firmware-rtl8192ce linux-firmware-rtl8192cu linux-firmware-rtl8192su linux-firmware-rpidistro-bcm43430"
+IMAGE_INSTALL_append = " pi-bluetooth bluez5 bluez5-testtools linux-firmware-bcm43430 i2c-tools udev-rules-rpi bridge-utils iptables linux-firmware-ralink linux-firmware-rtl8192ce linux-firmware-rtl8192cu linux-firmware-rtl8192su linux-firmware-rpidistro-bcm43430"
 ENABLE_UART = "1"
 
 # add audio
