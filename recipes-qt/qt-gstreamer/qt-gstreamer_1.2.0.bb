@@ -1,6 +1,6 @@
 include qt-gstreamer.inc
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r3" 
+PR = "r4" 
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=2d5025d4aa3495befef8f17206a5b0a1"
 
