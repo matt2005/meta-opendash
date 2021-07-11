@@ -3,8 +3,24 @@ require recipes-qt/qt5/qt5.inc
 DESCRIPTION = "Qt plugins for GStreamer 1.0"
 SECTION = "multimedia"
 LICENSE = "LGPLv2.1"
-DEPENDS = "glib-2.0-native gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly cmake boost qtbase qtdeclarative "
-
+DEPENDS = "glib-2.0-native gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly cmake boost qtbase qtdeclarative qtdeclarative \
+	qtmultimedia \
+	qtquickcontrols \
+	qtquickcontrols-dev \
+	qtquickcontrols-mkspecs \
+	qtquickcontrols2 \
+	qtquickcontrols2-dev \
+	qtquickcontrols2-mkspecs \
+	qtquickcontrols \
+	qtbase-plugins \
+	qtconnectivity-dev \
+	qtconnectivity-mkspecs \
+	qtmultimedia-dev \
+	qtmultimedia-mkspecs \
+	qtmultimedia-plugins \
+"
+# this is a revision number that should be updated every time you alter this recipe
+PR = "r1" 
 inherit cmake_qt5
 
 PACKAGECONFIG ??= "examples"
