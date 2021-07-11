@@ -29,6 +29,8 @@ export EXTRA_OECMAKE = "-DQT_VERSION=5 \
 
 EXTRA_OECONF += "--disable-rpath"
 
+require recipes-qt/qt5/qt5.inc
+
 #INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 #INHIBIT_PACKAGE_STRIP = "1"
 
