@@ -3,7 +3,7 @@ require recipes-qt/qt5/qt5.inc
 DESCRIPTION = "Qt plugins for GStreamer 1.0"
 SECTION = "multimedia"
 LICENSE = "LGPLv2.1"
-DEPENDS = "glib-2.0-native gstreamer1.0 gstreamer1.0-plugins-base cmake boost qtbase qtdeclarative "
+DEPENDS = "glib-2.0-native gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly cmake boost qtbase qtdeclarative "
 
 inherit cmake_qt5
 
@@ -23,6 +23,7 @@ export EXTRA_OECMAKE = "-DQT_VERSION=5 \
     -DUSE_QT_PLUGIN_DIR=OFF \
     -DCMAKE_SKIP_INSTALL_RPATH=YES \
     -DCMAKE_SKIP_RPATH=YES \
+	-DCMAKE_CXX_FLAGS=-std=c++11 \
 "
 
 EXTRA_OECONF += "--disable-rpath"
