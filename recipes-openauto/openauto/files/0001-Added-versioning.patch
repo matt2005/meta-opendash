@@ -1,0 +1,85 @@
+From bd759f0ba258c1ae71e0b958f320eabbc09c2150 Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Thu, 15 Jul 2021 00:38:37 +0100
+Subject: [PATCH] Added versioning
+
+---
+ autoapp/CMakeLists.txt         | 9 ++++++++-
+ btservice_proto/CMakeLists.txt | 8 +++++++-
+ openauto/CMakeLists.txt        | 9 ++++++++-
+ 3 files changed, 23 insertions(+), 3 deletions(-)
+
+diff --git a/autoapp/CMakeLists.txt b/autoapp/CMakeLists.txt
+index 67946c8..b860970 100644
+--- a/autoapp/CMakeLists.txt
++++ b/autoapp/CMakeLists.txt
+@@ -1,3 +1,8 @@
++set (AUTOAPP_VERSION_MAJOR 2)
++set (AUTOAPP_VERSION_MINOR 1)
++set (AUTOAPP_VERSION_PATCH 0)
++set (AUTOAPP_VERSION_STRING ${AUTOAPP_VERSION_MAJOR}.${AUTOAPP_VERSION_MINOR}.${AUTOAPP_VERSION_PATCH})
++
+ add_executable(autoapp
+         autoapp.cpp
+         UI/connectdialog.ui
+@@ -26,7 +31,9 @@ if(RPI_BUILD AND NOT GST_BUILD)
+ endif()
+ 
+ set_target_properties(autoapp
+-        PROPERTIES INSTALL_RPATH_USE_LINK_PATH 1)
++        PROPERTIES INSTALL_RPATH_USE_LINK_PATH 1
++		VERSION ${AUTOAPP_VERSION_STRING}
++        SOVERSION ${AUTOAPP_VERSION_MAJOR})
+ 
+ install(TARGETS autoapp
+         RUNTIME DESTINATION bin)
+diff --git a/btservice_proto/CMakeLists.txt b/btservice_proto/CMakeLists.txt
+index c4159c7..a61552f 100644
+--- a/btservice_proto/CMakeLists.txt
++++ b/btservice_proto/CMakeLists.txt
+@@ -1,3 +1,8 @@
++set (BTSERVICE_PROTO_VERSION_MAJOR 2)
++set (BTSERVICE_PROTO_VERSION_MINOR 1)
++set (BTSERVICE_PROTO_VERSION_PATCH 0)
++set (BTSERVICE_PROTO_VERSION_STRING ${BTSERVICE_PROTO_VERSION_MAJOR}.${BTSERVICE_PROTO_VERSION_MINOR}.${BTSERVICE_PROTO_VERSION_PATCH})
++
+ include(FindProtobuf)
+ find_package(Protobuf REQUIRED)
+ include_directories(${PROTOBUF_INCLUDE_DIR})
+@@ -6,7 +11,8 @@ file(GLOB_RECURSE proto_files ${CMAKE_CURRENT_SOURCE_DIR}/*.proto)
+ protobuf_generate_cpp(proto_sources proto_headers ${proto_files})
+ add_library(btservice_proto SHARED ${proto_headers} ${proto_sources})
+ target_link_libraries(btservice_proto ${PROTOBUF_LIBRARIES})
+-
++set_target_properties(btservice_proto PROPERTIES VERSION ${BTSERVICE_PROTO_VERSION_STRING}
++                                          SOVERSION ${BTSERVICE_PROTO_VERSION_MAJOR})
+ install(TARGETS btservice_proto DESTINATION lib)
+ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} DESTINATION include
+         FILES_MATCHING PATTERN *.h
+diff --git a/openauto/CMakeLists.txt b/openauto/CMakeLists.txt
+index f648044..8a56441 100644
+--- a/openauto/CMakeLists.txt
++++ b/openauto/CMakeLists.txt
+@@ -1,3 +1,8 @@
++set (OPENAUTO_VERSION_MAJOR 2)
++set (OPENAUTO_VERSION_MINOR 1)
++set (OPENAUTO_VERSION_PATCH 0)
++set (OPENAUTO_VERSION_STRING ${OPENAUTO_VERSION_MAJOR}.${OPENAUTO_VERSION_MINOR}.${OPENAUTO_VERSION_PATCH})
++
+ add_library(openauto SHARED
+         App.cpp
+         Service/BluetoothService.cpp
+@@ -121,7 +126,9 @@ install(TARGETS openauto
+         LIBRARY DESTINATION lib)
+ 
+ set_target_properties(openauto
+-        PROPERTIES INSTALL_RPATH_USE_LINK_PATH 1)
++        PROPERTIES INSTALL_RPATH_USE_LINK_PATH 1
++		VERSION ${OPENAUTO_VERSION_STRING}
++        SOVERSION ${OPENAUTO_VERSION_MAJOR})
+ 
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/openauto DESTINATION include)
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/btservice DESTINATION include)
+-- 
+2.32.0.windows.1
+
