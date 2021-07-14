@@ -1,7 +1,7 @@
 include qt-gstreamer.inc
 
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r7" 
+PR = "r8" 
 
 SRC_URI = " \
     git://github.com/GStreamer/qt-gstreamer.git;branch=master;protocol=http \
@@ -13,7 +13,7 @@ S="${WORKDIR}/git"
 EXTRA_OECMAKE += " \
     -DQT_VERSION=5 \
     -DUSE_QT_PLUGIN_DIR=OFF \
-	-DCMAKE_CXX_FLAGS=-std=c++11 \
+    -DCMAKE_CXX_FLAGS=-std=c++11 \
 "
 
 FILES_${PN} += " \
