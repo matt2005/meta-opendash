@@ -6,6 +6,10 @@ PR = "r13"
 SRC_URI = " \
     git://github.com/GStreamer/qt-gstreamer.git;branch=master;protocol=http \
     file://0002-FindQt4or5.cmake-Optionally-create-qt5_use_modules-t.patch \
+    file://gstreamer-1.16.patch \
+    file://gstreamer-1.6.patch \
+    file://qt-gstreamer-1.18.patch \
+    file://qt-gstreamer-gcc11.patch \
 "
 SRCREV = "6e4fb2f3fcfb453c5522c66457ac5ed8c3b1b05c"
 
