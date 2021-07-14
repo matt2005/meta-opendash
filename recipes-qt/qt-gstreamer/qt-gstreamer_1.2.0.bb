@@ -1,7 +1,7 @@
 include qt-gstreamer.inc
 
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r9" 
+PR = "r10" 
 
 SRC_URI = " \
     git://github.com/GStreamer/qt-gstreamer.git;branch=master;protocol=http \
