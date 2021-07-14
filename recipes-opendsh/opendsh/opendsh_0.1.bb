@@ -13,9 +13,11 @@ EXTRA_OECONF += " \
     --extra-cflags="${CFLAGS} ${HOST_CC_ARCH}${TOOLCHAIN_OPTIONS}" \
     --extra-ldflags="${LDFLAGS}" \
 "
+OECMAKE_C_FLAGS += "-pthread"
+
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r6" 
+PR = "r7" 
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"
