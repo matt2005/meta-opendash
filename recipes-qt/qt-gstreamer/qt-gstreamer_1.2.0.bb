@@ -12,6 +12,8 @@ SRCREV = "6e4fb2f3fcfb453c5522c66457ac5ed8c3b1b05c"
 SRC_URI[md5sum] = "fd794045a828c184acc1794b08a463fd"
 SRC_URI[sha256sum] = "9f3b492b74cad9be918e4c4db96df48dab9c012f2ae5667f438b64a4d92e8fd4"
 
+S="${WORKDIR}/git"
+
 EXTRA_OECMAKE += " \
     -DQT_VERSION=5 \
     -DUSE_QT_PLUGIN_DIR=OFF \
