@@ -1,12 +1,11 @@
 include qt-gstreamer.inc
 
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r15" 
+PR = "r16" 
 
 SRC_URI = " \
     git://github.com/GStreamer/qt-gstreamer.git;branch=master;protocol=http \
     file://0002-FindQt4or5.cmake-Optionally-create-qt5_use_modules-t.patch \
-    file://gstreamer-1.6.patch \
     file://qt-gstreamer-1.18.patch \
     file://qt-gstreamer-gcc11.patch \
 "
