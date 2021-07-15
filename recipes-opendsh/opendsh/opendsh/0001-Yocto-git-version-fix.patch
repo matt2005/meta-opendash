@@ -1,6 +1,6 @@
-From 927559cf1cd9ab271c4b72a11386de92de2811ce Mon Sep 17 00:00:00 2001
+From 24deaa608ad759c1a4e6252e54d4f50a0d6b1e12 Mon Sep 17 00:00:00 2001
 From: matt <matthilton2005@gmail.com>
-Date: Thu, 15 Jul 2021 22:19:41 +0100
+Date: Thu, 15 Jul 2021 22:22:41 +0100
 Subject: [PATCH] Yocto git version fix
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] Yocto git version fix
  1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/cmake_modules/gitversion.cmake b/cmake_modules/gitversion.cmake
-index dd473c0..0c7e471 100644
+index dd473c0..9cea4c9 100644
 --- a/cmake_modules/gitversion.cmake
 +++ b/cmake_modules/gitversion.cmake
 @@ -4,19 +4,22 @@ cmake_minimum_required(VERSION 3.0.0)
@@ -16,7 +16,7 @@ index dd473c0..0c7e471 100644
  
  set(_build_version "unknown")
 +set(base_directory ${CMAKE_CURRENT_SOURCE_DIR})
-+set(reporoot ${base_directory}/../git)
++set(reporoot ${base_directory})
 +message(STATUS "Repo Root: ${reporoot}")
  
  find_package(Git)
