@@ -1,0 +1,26 @@
+From 3e32092df6ed764ec9ca8b493f3eb40eaaeacb87 Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Thu, 15 Jul 2021 23:08:35 +0100
+Subject: [PATCH] Yocto taglib fix
+
+---
+ CMakeLists.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c7583c9..bff321a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,7 +39,8 @@ find_package(KF5BluezQt REQUIRED)
+ find_package(Protobuf REQUIRED)
+ find_package(OpenSSL REQUIRED)
+ find_package(rtaudio REQUIRED)
+-find_package(taglib REQUIRED)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(TAGLIB taglib REQUIRED)
+ find_package(aasdk REQUIRED)
+ find_package(openauto REQUIRED)
+ 
+-- 
+2.32.0.windows.1
+
