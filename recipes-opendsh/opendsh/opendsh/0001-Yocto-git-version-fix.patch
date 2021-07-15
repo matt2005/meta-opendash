@@ -1,22 +1,29 @@
-From 37c1e9346216bb18c5b4306840dd7223c85676af Mon Sep 17 00:00:00 2001
+From 6b05d50c5016185e06f40b243fa0358ab37e2abb Mon Sep 17 00:00:00 2001
 From: matt <matthilton2005@gmail.com>
-Date: Thu, 15 Jul 2021 21:57:16 +0100
-Subject: [PATCH] Yocto Git Lookup
+Date: Thu, 15 Jul 2021 22:12:10 +0100
+Subject: [PATCH] Yocto git version fix
 
 ---
- cmake_modules/gitversion.cmake | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ cmake_modules/gitversion.cmake | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/cmake_modules/gitversion.cmake b/cmake_modules/gitversion.cmake
-index dd473c0..77ee8f1 100644
+index dd473c0..7792642 100644
 --- a/cmake_modules/gitversion.cmake
 +++ b/cmake_modules/gitversion.cmake
-@@ -9,14 +9,14 @@ find_package(Git)
+@@ -4,19 +4,21 @@ cmake_minimum_required(VERSION 3.0.0)
+ message(STATUS "Resolving GIT Version")
+ 
+ set(_build_version "unknown")
++set(reporoot ${local_dir}/../git)
++message(STATUS "Repo Root: ${reporoot}")
+ 
+ find_package(Git)
  if(GIT_FOUND)
    execute_process(
      COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
 -    WORKING_DIRECTORY "${local_dir}"
-+    WORKING_DIRECTORY "${local_dir}/../git"
++    WORKING_DIRECTORY "${reporoot}"
      OUTPUT_VARIABLE _build_version
      ERROR_QUIET
      OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -24,16 +31,16 @@ index dd473c0..77ee8f1 100644
    execute_process(
      COMMAND ${GIT_EXECUTABLE} rev-parse --abbrev-ref HEAD
 -    WORKING_DIRECTORY "${local_dir}"
-+    WORKING_DIRECTORY "${local_dir}/../git"
++    WORKING_DIRECTORY "${reporoot}"
      OUTPUT_VARIABLE _build_branch
      ERROR_QUIET
      OUTPUT_STRIP_TRAILING_WHITESPACE
-@@ -24,7 +24,7 @@ if(GIT_FOUND)
+@@ -24,7 +26,7 @@ if(GIT_FOUND)
    message( STATUS "GIT hash: ${_build_version}; branch: ${_build_branch}")
    execute_process(
    	COMMAND ${GIT_EXECUTABLE} diff --no-ext-diff --quiet
 -    WORKING_DIRECTORY "${local_dir}"
-+    WORKING_DIRECTORY "${local_dir}/../git"
++    WORKING_DIRECTORY "${reporoot}"
    	RESULT_VARIABLE ret
    )
    if(ret EQUAL "1")
