@@ -1,0 +1,36 @@
+From e38eca8cc6959b210a6065f444851a5e74c5059e Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Thu, 15 Jul 2021 21:02:03 +0100
+Subject: [PATCH] RPI3
+
+---
+ cmake_modules/functions.cmake | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
+
+diff --git a/cmake_modules/functions.cmake b/cmake_modules/functions.cmake
+index 99be6e3..e172464 100644
+--- a/cmake_modules/functions.cmake
++++ b/cmake_modules/functions.cmake
+@@ -1,15 +1,8 @@
+ 
+ function( findRpiRevision OUTPUT )
+-    # Find it with an automated script
+-    execute_process( COMMAND grep -Po "^Revision\\s*:\\s*\\K[[:xdigit:]]+" /proc/cpuinfo OUTPUT_VARIABLE TMP OUTPUT_STRIP_TRAILING_WHITESPACE )
+-
+-    # If have not found the Revision number, use the last version
+-    if ( TMP )
+-        message( "-- Detecting Raspberry Pi Revision Number: ${TMP}" )
+-    else()
+-        set( TMP "0006" )
+-        message( WARNING "-- Could NOT find Raspberry Pi revision!" )
+-    endif()
+-
++	# Yocto Fix for RPI3
++    set( TMP "a020d3")
++    message( "-- Detecting Raspberry Pi Revision Number: ${TMP}" )
++    message( WARNING "-- Could NOT find Raspberry Pi revision!" )
+     set( ${OUTPUT} "${TMP}" PARENT_SCOPE )
+ endfunction()
+-- 
+2.32.0.windows.1
+
