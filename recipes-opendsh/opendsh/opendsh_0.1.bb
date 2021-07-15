@@ -13,7 +13,7 @@ SRC_URI_append_raspberrypi4 = " file://0001-RPI4-Yocto.patch"
 SRC_URI_append_raspberrypi3 = " file://0001-RPI3-Yocto.patch"
 
 SRCREV = "develop"
-DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib pkg-config librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost bluez-qt aasdk openauto"
+DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib pkgconfig librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost bluez-qt aasdk openauto"
 inherit cmake_qt5
 EXTRA_OECONF += " \
     --enable-pthreads \
