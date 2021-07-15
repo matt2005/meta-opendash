@@ -1,14 +1,14 @@
-From dc1eaa9a9af2b5f7c7fa9efcbb559e65acff755e Mon Sep 17 00:00:00 2001
+From b28fa3a61cf72a438a744c338fbe3e0d239c3e53 Mon Sep 17 00:00:00 2001
 From: matt <matthilton2005@gmail.com>
-Date: Thu, 15 Jul 2021 20:59:34 +0100
-Subject: [PATCH] RPI4
+Date: Thu, 15 Jul 2021 21:22:44 +0100
+Subject: [PATCH] RPI3 Yocto
 
 ---
  cmake_modules/functions.cmake | 15 ++++-----------
  1 file changed, 4 insertions(+), 11 deletions(-)
 
 diff --git a/cmake_modules/functions.cmake b/cmake_modules/functions.cmake
-index 99be6e3..1ca93ef 100644
+index 99be6e3..fbca857 100644
 --- a/cmake_modules/functions.cmake
 +++ b/cmake_modules/functions.cmake
 @@ -1,15 +1,8 @@
@@ -25,10 +25,10 @@ index 99be6e3..1ca93ef 100644
 -        message( WARNING "-- Could NOT find Raspberry Pi revision!" )
 -    endif()
 -
-+	# Yocto Fix for RPI4
-+    set( TMP "d03114")
++	# Yocto Fix for RPI3
++    set( TMP "a020d3")
 +    message( "-- Detecting Raspberry Pi Revision Number: ${TMP}" )
-+    message( "-- Yocto Forced RPI4" )
++    message( "-- Yocto Forced RPI3" )
      set( ${OUTPUT} "${TMP}" PARENT_SCOPE )
  endfunction()
 -- 
