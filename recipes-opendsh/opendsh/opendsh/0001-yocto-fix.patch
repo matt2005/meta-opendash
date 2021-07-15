@@ -22,23 +22,24 @@ index 2fe9f4a..f5d7191 100644
  set(CMAKE_CXX_FLAGS_RELEASE "-g -O3")
  
 diff --git a/cmake_modules/functions.cmake b/cmake_modules/functions.cmake
-index 99be6e3..9f8394e 100644
+index 99be6e3..0aff5d5 100644
 --- a/cmake_modules/functions.cmake
 +++ b/cmake_modules/functions.cmake
-@@ -2,7 +2,15 @@
+@@ -2,7 +2,16 @@
  function( findRpiRevision OUTPUT )
      # Find it with an automated script
      execute_process( COMMAND grep -Po "^Revision\\s*:\\s*\\K[[:xdigit:]]+" /proc/cpuinfo OUTPUT_VARIABLE TMP OUTPUT_STRIP_TRAILING_WHITESPACE )
 -
-+    if (MACHINE)
-+        message( "-- Yocto Machine Detected: ${MACHINE}")
-+        if (MACHINE MATCHES '^raspberrypi3')
-+            message("-- Yocto RaspberryPi3")
-+            set( TMP "a020d3")
-+        elseif (MACHINE MATCHES '^raspberrypi4')
-+            message("-- Yocto RaspberryPi4")
-+            set( TMP "d03114")
-+        endif()
++	if (MACHINE)
++    message( "-- Yocto Machine Detected: ${MACHINE}")
++		if (MACHINE MATCHES '^raspberrypi3')
++			message("-- Yocto RaspberryPi3")
++			set( TMP "a020d3")
++		elseif (MACHINE MATCHES '^raspberrypi4')
++			message("-- Yocto RaspberryPi4")
++			set( TMP "d03114")
++		endif()
++	endif()
      # If have not found the Revision number, use the last version
      if ( TMP )
          message( "-- Detecting Raspberry Pi Revision Number: ${TMP}" )
