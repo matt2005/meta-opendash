@@ -28,7 +28,7 @@ index 99be6e3..1ca93ef 100644
 +	# Yocto Fix for RPI4
 +    set( TMP "d03114")
 +    message( "-- Detecting Raspberry Pi Revision Number: ${TMP}" )
-+    message( WARNING "-- Could NOT find Raspberry Pi revision!" )
++    message( "-- Yocto Forced RPI4" )
      set( ${OUTPUT} "${TMP}" PARENT_SCOPE )
  endfunction()
 -- 

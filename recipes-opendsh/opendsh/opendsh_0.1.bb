@@ -6,10 +6,10 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
            file://0001-fixed-thread.patch \
            "
 
-SRC_URI_append_raspberrypi4-64 = " file://0001-RPI4.patch"
-SRC_URI_append_raspberrypi4 = " file://0001-RPI4.patch"
-SRC_URI_append_raspberrypi3-64 = " file://0001-RPI3.patch"
-SRC_URI_append_raspberrypi3 = " file://0001-RPI3.patch"
+SRC_URI_raspberrypi4-64 = " file://0001-RPI4.patch"
+SRC_URI_raspberrypi4 = " file://0001-RPI4.patch"
+SRC_URI_raspberrypi3-64 = " file://0001-RPI3.patch"
+SRC_URI_raspberrypi3 = " file://0001-RPI3.patch"
 
 SRCREV = "develop"
 DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base qt-gstreamer boost bluez-qt aasdk openauto"
