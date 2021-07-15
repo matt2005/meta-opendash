@@ -13,7 +13,7 @@ SRC_URI_append_raspberrypi4 = " file://0001-RPI4-Yocto.patch"
 SRC_URI_append_raspberrypi3 = " file://0001-RPI3-Yocto.patch"
 
 SRCREV = "develop"
-DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib pkgconfig librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good qt-gstreamer boost bluez-qt aasdk openauto"
+DEPENDS += " libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio taglib taglib-dev pkgconfig librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good qt-gstreamer boost bluez-qt aasdk openauto"
 inherit cmake_qt5
 EXTRA_OECONF += " \
     --enable-pthreads \
@@ -24,7 +24,7 @@ OECMAKE_C_FLAGS += " -pthread"
 
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r22" 
+PR = "r23" 
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"
