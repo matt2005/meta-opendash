@@ -7,6 +7,7 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
            file://0001-Yocto-git-version-fix.patch \
            file://0001-Yocto-taglib-fix.patch \
 		   file://0001-Added-QTDbus-fix.patch \
+		   file://0001-Added-dbus.patch \
            "
 
 #SRC_URI_append_raspberrypi4-64 = " file://0001-RPI4-Yocto.patch"
@@ -26,7 +27,7 @@ OECMAKE_C_FLAGS += " -pthread"
 
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r5" 
+PR = "r6" 
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"

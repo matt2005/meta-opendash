@@ -1,0 +1,25 @@
+From 1cc0d2c68cd0f1bc69a3b39d926ebb17178de5ce Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Fri, 16 Jul 2021 23:59:29 +0100
+Subject: [PATCH] Added dbus
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index bff321a..a8e297c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,7 +34,7 @@ add_definitions(-DBOOST_ALL_DYN_LINK)
+ 
+ find_package(Boost REQUIRED COMPONENTS system log OPTIONAL_COMPONENTS unit_test_framework)
+ find_package(libusb-1.0 REQUIRED)
+-find_package(Qt5 COMPONENTS Multimedia MultimediaWidgets Bluetooth Qml Quick QuickWidgets SerialBus SerialPort WebSockets REQUIRED)
++find_package(Qt5 COMPONENTS Multimedia MultimediaWidgets Bluetooth Qml Quick QuickWidgets SerialBus SerialPort WebSockets DBus REQUIRED)
+ find_package(KF5BluezQt REQUIRED)
+ find_package(Protobuf REQUIRED)
+ find_package(OpenSSL REQUIRED)
+-- 
+2.32.0.windows.1
+
