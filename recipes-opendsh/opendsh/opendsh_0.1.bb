@@ -24,6 +24,9 @@ EXTRA_OECONF += " \
 "
 OECMAKE_C_FLAGS += " -pthread"
 
+BUILD_CFLAGS += "-fcommon"
++CFLAGS += "-fcommon"
+
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
 PR = "r8" 
