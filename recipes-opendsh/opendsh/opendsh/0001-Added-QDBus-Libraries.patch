@@ -1,0 +1,24 @@
+From 6fd1f27fc404928d7c5123917006fbcbd5ce2e40 Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Sun, 18 Jul 2021 21:12:57 +0100
+Subject: [PATCH] Added QDBus Libraries
+
+---
+ plugins/CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/plugins/CMakeLists.txt b/plugins/CMakeLists.txt
+index 1f7fb48..c6253fe 100644
+--- a/plugins/CMakeLists.txt
++++ b/plugins/CMakeLists.txt
+@@ -45,6 +45,7 @@ FOREACH(plugin_type ${plugin_types})
+             aasdk_proto
+             aasdk
+             openauto
++            ${Qt5DBus_LIBRARIES}
+             ${Boost_LIBRARIES}
+             ${Qt5WebSockets_LIBRARIES}
+             ${Qt5SerialBus_LIBRARIES}
+-- 
+2.32.0.windows.1
+
