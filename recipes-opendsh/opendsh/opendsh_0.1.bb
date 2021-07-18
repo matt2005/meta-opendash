@@ -9,6 +9,7 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
 		   file://0001-Added-QTDbus-fix.patch \
 		   file://0001-Added-dbus.patch \
            file://0001-Added-QDBus-Libraries.patch \
+           file://0001-Dbus-patch.patch \
            "
 
 #SRC_URI_append_raspberrypi4-64 = " file://0001-RPI4-Yocto.patch"
