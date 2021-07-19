@@ -16,6 +16,11 @@ SRC_URI_append_raspberrypi3 = " file://0001-RPI3-Yocto.patch"
 SRCREV = "develop"
 DEPENDS += " glib-2.0-native qtbase libpthread-stubs cmake protobuf protobuf-native aasdk pulseaudio pkgconfig taglib librtaudio qtmultimedia qtconnectivity qtserialbus qtwebsockets dbus gcc-runtime gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good qt-gstreamer boost bluez-qt aasdk openauto xrandr"
 inherit cmake_qt5
+
+# Force -fcommon to avoid issues with GCC 10 (which defaults to -fno-common)
+BUILD_CFLAGS += " -fcommon -Wno-deprecated -Wno-unused-result"
+CFLAGS += " -fcommon -Wno-deprecated -Wno-unused-result"
+
 EXTRA_OECONF += " \
     --enable-pthreads \
     --extra-cflags="${CFLAGS} ${HOST_CC_ARCH}${TOOLCHAIN_OPTIONS}" \
@@ -23,9 +28,6 @@ EXTRA_OECONF += " \
 "
 OECMAKE_C_FLAGS += " -pthread"
 
-# Force -fcommon to avoid issues with GCC 10 (which defaults to -fno-common)
-BUILD_CFLAGS += " -fcommon"
-CFLAGS += " -fcommon"
 
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
