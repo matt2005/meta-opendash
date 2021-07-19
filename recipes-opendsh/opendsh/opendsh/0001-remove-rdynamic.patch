@@ -1,0 +1,25 @@
+From d6aea191763223b44b4968f9f0b173a1d512101e Mon Sep 17 00:00:00 2001
+From: matt <matthilton2005@gmail.com>
+Date: Mon, 19 Jul 2021 23:17:55 +0100
+Subject: [PATCH] remove -rdynamic
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e466dd3..5b27d8d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,7 +21,7 @@ set(Boost_USE_STATIC_RUNTIME OFF)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake_modules/")
+ SET(CMAKE_CXX_STANDARD 14)
+-set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} -rdynamic)
++set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} )
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_INIT} -Wall -pedantic -fPIC")
+ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
+ set(CMAKE_CXX_FLAGS_RELEASE "-g -O3")
+-- 
+2.32.0.windows.1
+
