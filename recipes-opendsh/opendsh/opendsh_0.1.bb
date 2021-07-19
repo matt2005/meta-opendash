@@ -6,7 +6,6 @@ SRC_URI = "git://github.com/opendsh/dash.git;protocol=https;branch=develop \
            file://0001-fixed-thread.patch \
            file://0001-Yocto-git-version-fix.patch \
            file://0001-Yocto-taglib-fix.patch \
-           file://0001-Added-fix-for-QtDBus-error-to-fix-73.patch \
            "
 
 #SRC_URI_append_raspberrypi4-64 = " file://0001-RPI4-Yocto.patch"
@@ -25,12 +24,12 @@ EXTRA_OECONF += " \
 OECMAKE_C_FLAGS += " -pthread"
 
 # Force -fcommon to avoid issues with GCC 10 (which defaults to -fno-common)
-BUILD_CFLAGS += "-fcommon"
-CFLAGS += "-fcommon"
+BUILD_CFLAGS += " -fcommon"
+CFLAGS += " -fcommon"
 
 EXTRA_OECMAKE += " -DGST_BUILD=true -DRPI_BUILD=true -DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
-PR = "r9" 
+PR = "r10" 
 
 # this indicates the folder to run do_compile from.
 S="${WORKDIR}/git"
