@@ -13,7 +13,6 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
 	packagegroup-base \
 	iw \
-	linux-firmware-bcm43430\
 	wpa-supplicant \
 	init-ifupdown \
 	wpa-supplicant \
@@ -26,11 +25,9 @@ QT_DEV = " \
 	qtmultimedia \
 	qtquickcontrols \
 	qtquickcontrols-dev \
-	qtquickcontrols-mkspecs \
 	qtquickcontrols2 \
 	qtquickcontrols2-dev \
 	qtquickcontrols2-mkspecs \
-	qtquickcontrols \
 	qtbase-plugins \
 	qtconnectivity-dev \
 	qtconnectivity-mkspecs \
